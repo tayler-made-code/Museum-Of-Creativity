@@ -2,7 +2,6 @@
 
 $(document).ready(function(){
   $('.exhibitCarousel').slick({
-    mobilefirst: true,
     centerMode: true,
     arrows: true,
     centerPadding: '100px',
@@ -12,17 +11,13 @@ $(document).ready(function(){
     {
       breakpoint: 768,
       settings: {
-      centerMode: true,
-      centerPadding: '40px',
-      slidesToShow: 3
+      // placeholder //
       }
     },
     {
       breakpoint: 480,
       settings: {
-      centerMode: true,
-      centerPadding: '40px',
-      slidesToShow: 1
+      // placeholder //
       }
     }
     ]

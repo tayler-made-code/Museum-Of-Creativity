@@ -1,6 +1,14 @@
-.slick-slide {
-  height: 0px!important;
- }
- .slick-slide.slick-active {
-    height: 100% !important;  
- }
+.exhibitCarousel .slick-slide {
+  transform: scale(0.7); /* Set the size of all non-active images */
+  filter: blur(4px); /* Apply a slight blur to non-active images */
+}
+
+.exhibitCarousel .slick-active {
+  transform: scale(.85); /* Make the active image larger */
+  filter: blur(2px); /* Remove the blur from the active image */
+}
+
+.exhibitCarousel .slick-center {
+  transform: scale(1); /* Make the active image larger */
+  filter: blur(0px); /* Remove the blur from the active image */
+}
