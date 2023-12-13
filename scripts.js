@@ -1,30 +1,28 @@
-// target the slick slider center element and enlarge it //
+window.onload = function() {
+  setupExhibitSlider();
+}
 
-$(document).ready(function(){
-  $('.exhibitCarousel').slick({
-    centerMode: true,
-    arrows: true,
-    centerPadding: '100px',
-    slidesToShow: 3,
+
+function setupExhibitSlider() {
+  const exhibitSlider = new Swiper('.exhibitSlider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
     loop: true,
-    responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-      // placeholder //
-      }
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2.5,
     },
-    {
-      breakpoint: 480,
-      settings: {
-      // placeholder //
-      }
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     }
-    ]
   });
-});
-
-function enlargeCenter() {
-  var center = document.querySelector('.slick-current');
-  center.classList.add('enlarge');
 }
