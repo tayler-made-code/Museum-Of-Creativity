@@ -30,3 +30,6 @@ The Museum of Imagination is a captivating school project that takes you on a vi
 
 ```bash
 git clone https://github.com/your-username/museum-of-imagination.git
+```
+
+
