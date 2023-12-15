@@ -14,6 +14,8 @@ function clamp(x, a, b) {
   return Math.min(Math.max(x, a), b);
 }
 
+
+// Key bindings for movement
 class InputController {
   constructor(target) {
     this.target_ = target || document;
@@ -32,15 +34,13 @@ class InputController {
     this.previous_ = null;
     this.keys_ = {};
     this.previousKeys_ = {};
-    this.target_.addEventListener('mousedown', (e) => this.onMouseDown_(e), false);
     this.target_.addEventListener('mousemove', (e) => this.onMouseMove_(e), false);
-    this.target_.addEventListener('mouseup', (e) => this.onMouseUp_(e), false);
     this.target_.addEventListener('keydown', (e) => this.onKeyDown_(e), false);
     this.target_.addEventListener('keyup', (e) => this.onKeyUp_(e), false);
   }
 
   onMouseMove_(e) {
-    this.current_.mouseX = e.pageX - window.innerWidth / 2;
+    this.current_.mouseX = e.pageX * 1.5;
     this.current_.mouseY = e.pageY - window.innerHeight / 2;
 
     if (this.previous_ === null) {
@@ -49,36 +49,6 @@ class InputController {
 
     this.current_.mouseXDelta = this.current_.mouseX - this.previous_.mouseX;
     this.current_.mouseYDelta = this.current_.mouseY - this.previous_.mouseY;
-  }
-
-  onMouseDown_(e) {
-    this.onMouseMove_(e);
-
-    switch (e.button) {
-      case 0: {
-        this.current_.leftButton = true;
-        break;
-      }
-      case 2: {
-        this.current_.rightButton = true;
-        break;
-      }
-    }
-  }
-
-  onMouseUp_(e) {
-    this.onMouseMove_(e);
-
-    switch (e.button) {
-      case 0: {
-        this.current_.leftButton = false;
-        break;
-      }
-      case 2: {
-        this.current_.rightButton = false;
-        break;
-      }
-    }
   }
 
   onKeyDown_(e) {
@@ -195,7 +165,7 @@ class FirstPersonCamera {
   }
 }
 
-
+// Call to build the scene
 class FirstPersonCameraDemo {
   constructor() {
     this.initialize_();
@@ -252,11 +222,11 @@ class FirstPersonCameraDemo {
     // LOADS THE FLOOR / GRASS //
     const mapLoader = new THREE.TextureLoader();
     const maxAnisotropy = this.threejs_.capabilities.getMaxAnisotropy();
-    const checkerboard = mapLoader.load('resources/pexels-pixmike-413195.jpg');
+    const checkerboard = mapLoader.load('resources/grass.jpg');
     checkerboard.anisotropy = maxAnisotropy;
     checkerboard.wrapS = THREE.RepeatWrapping;
     checkerboard.wrapT = THREE.RepeatWrapping;
-    checkerboard.repeat.set(3, 3);
+    checkerboard.repeat.set(5, 5);
     checkerboard.encoding = THREE.sRGBEncoding;
 
     const plane = new THREE.Mesh(
