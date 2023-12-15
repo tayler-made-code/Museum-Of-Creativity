@@ -10,7 +10,7 @@
 }
 
 :root {
-  --primary: #ffbe98;
+  --primary: #ffee10;
   --white: #ffffff;
   --bg: #f5f5f5;
 }
@@ -223,4 +223,10 @@ body {
 
 .exhibitSliderControl .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
+}
+
+ul li a:hover {
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
 }
