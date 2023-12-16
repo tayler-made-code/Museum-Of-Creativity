@@ -148,13 +148,13 @@ input, select, textarea {
 			transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
 		}
 
-		a:hover {
-			color: #ffee10;
-			border-bottom-color: rgba(255, 255, 255, 0);
+		#logo a:hover {
+			color: #CC00FF;
+			border-bottom-color: #CC00FF;
 		}
 
 			a:hover strong {
-				color: #9a73a9;
+				color: #CC00FF;
 			}
 
 	strong, b {
@@ -1800,7 +1800,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background: #ffee10;
+			background: #CC00FF;
 		}
 
 		input[type="button"]:active,
@@ -1808,7 +1808,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background: #ffee10;
+			background: #CC00FF;
 		}
 
 		input[type="button"].alt,

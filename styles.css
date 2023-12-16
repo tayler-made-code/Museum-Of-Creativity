@@ -226,7 +226,7 @@ body {
 }
 
 ul li a:hover {
-  color: #ffee10;
-  box-shadow: 0 0 5px #ffee10;
-  text-shadow: 0 0 5px #ffee10;
+  color: #5e3579;
+  /* box-shadow: 0 0 5px #ffee10; */
+  text-shadow: 0 0 5px #CC00FF;
 }
