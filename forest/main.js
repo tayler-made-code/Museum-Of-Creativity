@@ -176,7 +176,6 @@ class FirstPersonCameraDemo {
     this.initializeLights_();
     this.initializeScene_();
     this.initializeDemo_();
-
     this.previousRAF_ = null;
     this.raf_();
     this.onWindowResize_();
@@ -218,6 +217,17 @@ class FirstPersonCameraDemo {
   }
 
   initializeScene_() {
+    const loader = new THREE.CubeTextureLoader();
+    const texture = loader.load([
+      './resources/skybox/skybox_left.png',  //posX
+      './resources/skybox/skybox_right.png', //negX
+      './resources/skybox/skybox_up.png',    //posY
+      './resources/skybox/skybox_down.png',  //negY
+      './resources/skybox/skybox_front.png', //posZ
+      './resources/skybox/skybox_back.png',  //negZ
+  ]);
+  texture.encoding = THREE.sRGBEncoding;
+    this.scene_.background = texture;
 
     // LOADS THE FLOOR / GRASS //
     const mapLoader = new THREE.TextureLoader();
@@ -237,10 +247,20 @@ class FirstPersonCameraDemo {
     plane.rotation.x = -Math.PI / 2;
     this.scene_.add(plane);
 
+
+    // adds the box / 3d model
+    const box = new THREE.Mesh(
+      new THREE.BoxGeometry(4, 4, 4));
+    box.position.set(10, 2, 0);
+    box.castShadow = true;
+    box.receiveShadow = true;
+    this.scene_.add(box);
+
     // Create Box3 for each mesh in the scene so that we can
     // do some easy intersection tests.
-    const meshes = [
-      plane];
+
+    // adds trees
+    const meshes = [plane, box];
 
     this.objects_ = [];
 
