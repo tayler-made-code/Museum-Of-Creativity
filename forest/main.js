@@ -1,7 +1,7 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.136';
 
 import {FirstPersonControls} from 'https://cdn.skypack.dev/three@0.136/examples/jsm/controls/FirstPersonControls.js';
-
+import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.136/examples/jsm/loaders/GLTFLoader.js';
 
 const KEYS = {
   'a': 65,
@@ -229,6 +229,7 @@ class FirstPersonCameraDemo {
   texture.encoding = THREE.sRGBEncoding;
     this.scene_.background = texture;
 
+
     // LOADS THE FLOOR / GRASS //
     const mapLoader = new THREE.TextureLoader();
     const maxAnisotropy = this.threejs_.capabilities.getMaxAnisotropy();
@@ -248,19 +249,58 @@ class FirstPersonCameraDemo {
     this.scene_.add(plane);
 
 
-    // adds the box / 3d model
-    const box = new THREE.Mesh(
-      new THREE.BoxGeometry(4, 4, 4));
-    box.position.set(10, 2, 0);
-    box.castShadow = true;
-    box.receiveShadow = true;
-    this.scene_.add(box);
+    // ADDS TREES
+    // tree set 1
+    const oneloader = new GLTFLoader().setPath('oak_trees/');
+    oneloader.load('scene.gltf', (gltf) => {
+      const mesh = gltf.scene;
+      mesh.position.set(20,0,0);
+      mesh.scale.set(12, 12, 12);
+      this.scene_.add(mesh);
+    });
+    // tree set 2
+    const twoloader = new GLTFLoader().setPath('oak_trees/');
+    twoloader.load('scene.gltf', (gltf) => {
+      const mesh = gltf.scene;
+      mesh.position.set(20,0,20);
+      mesh.scale.set(12, 12, 12);
+      this.scene_.add(mesh);
+    });
+    // tree set 3
+    const threeloader = new GLTFLoader().setPath('oak_trees/');
+    threeloader.load('scene.gltf', (gltf) => {
+      const mesh = gltf.scene;
+      mesh.position.set(-20,0,0);
+      mesh.scale.set(12, 12, 12);
+      this.scene_.add(mesh);
+    });
+    // tree set 4
+    const fourloader = new GLTFLoader().setPath('oak_trees/');
+    fourloader.load('scene.gltf', (gltf) => {
+      const mesh = gltf.scene;
+      mesh.position.set(-20,0,20);
+      mesh.scale.set(12, 12, 12);
+      this.scene_.add(mesh);
+    });
+    // tree set 5
+    const fiveloader = new GLTFLoader().setPath('oak_trees/');
+    fiveloader.load('scene.gltf', (gltf) => {
+      const mesh = gltf.scene;
+      mesh.position.set(20,0,-20);
+      mesh.scale.set(12, 12, 12);
+      this.scene_.add(mesh);
+    });
+    // tree set 6
+    const sixloader = new GLTFLoader().setPath('oak_trees/');
+    sixloader.load('scene.gltf', (gltf) => {
+      const mesh = gltf.scene;
+      mesh.position.set(-20,0,-20);
+      mesh.scale.set(20, 20, 20);
+      this.scene_.add(mesh);
+    });
 
-    // Create Box3 for each mesh in the scene so that we can
-    // do some easy intersection tests.
 
-    // adds trees
-    const meshes = [plane, box];
+    const meshes = [plane];
 
     this.objects_ = [];
 
