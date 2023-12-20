@@ -79,18 +79,18 @@ body {
 }
 
 #exhibit {
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
 }
 
 @media (max-width:1440px) {
   #exhibit {
-    padding: 7rem 0;
+    padding: 7rem 0 0 0;
   }
 }
 
 #exhibit .exhibitSlider {
-  height: 60rem;
-  padding: 2rem 0;
+  height: 68rem;
+  padding: 2rem 0 0 0;
   position: relative;
 }
 
@@ -229,4 +229,14 @@ ul li a:hover {
   color: #5e3579;
   /* box-shadow: 0 0 5px #ffee10; */
   text-shadow: 0 0 5px #CC00FF;
+}
+
+@media (max-width:980px) {
+  .swiper-pagination, .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
+}
+
+aln-center {
+  margin: 0 auto;
 }
