@@ -395,9 +395,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Key binding to return to main page
 document.addEventListener('keydown', function(event) {
-  if(event.keyCode == 66) {
+  if(event.keyCode == 66 || event.keyCode == 27) {
     alert("Click Ok to return to the main page");
-    if(event.keyCode == 66) {
+    if(event.keyCode == 66 || event.keyCode == 27) {
       window.location.href = "../index.html";
     }
   }
