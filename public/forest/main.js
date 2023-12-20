@@ -10,6 +10,8 @@ const KEYS = {
   'd': 68,
 };
 
+alert('Welsome to the Forest Exibit');
+
 function clamp(x, a, b) {
   return Math.min(Math.max(x, a), b);
 }
