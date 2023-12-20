@@ -10,7 +10,7 @@ const KEYS = {
   'd': 68,
 };
 
-alert('Welsome to the Forest Exibit');
+alert('Welcome to the Forest Exibit, press B to leave at anytime.');
 
 function clamp(x, a, b) {
   return Math.min(Math.max(x, a), b);
@@ -391,4 +391,14 @@ let _APP = null;
 
 window.addEventListener('DOMContentLoaded', () => {
   _APP = new FirstPersonCameraDemo();
+});
+
+// Key binding to return to main page
+document.addEventListener('keydown', function(event) {
+  if(event.keyCode == 66) {
+    alert("Click Ok to return to the main page");
+    if(event.keyCode == 66) {
+      window.location.href = "../index.html";
+    }
+  }
 });
