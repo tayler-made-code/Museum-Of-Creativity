@@ -240,3 +240,9 @@ ul li a:hover {
 aln-center {
   margin: 0 auto;
 }
+
+.underConstruction {
+  width: 100%;
+  border-radius: 50%;
+  border: 1rem solid #5e3579;
+}

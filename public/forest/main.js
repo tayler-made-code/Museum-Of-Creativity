@@ -10,7 +10,7 @@ const KEYS = {
   'd': 68,
 };
 
-alert('Welcome to the Forest Exibit, press B to leave at anytime.');
+alert('Welcome to the Forest Exhibit, press B to leave at anytime.');
 
 function clamp(x, a, b) {
   return Math.min(Math.max(x, a), b);
