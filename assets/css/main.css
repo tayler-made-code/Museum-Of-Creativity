@@ -29,22 +29,26 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+/* Reset default styles */
 body {
-	line-height: 1;
+	line-height: 1; /* Ensures consistent line height across browsers */
 }
 
+/* Remove default list styles */
 ol, ul {
-	list-style: none;
+	list-style: none; /* Removes bullets and numbers from lists */
 }
 
+/* Remove default quotes and quotes styles */
 blockquote, q {
-	quotes: none;
+	quotes: none; /* Disables automatic insertion of quotes */
 }
 
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
+/* Remove default quotes content */
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
 
 table {
 	border-collapse: collapse;
@@ -55,47 +59,50 @@ body {
 	-webkit-text-size-adjust: none;
 }
 
+/* Highlight styling */
 mark {
-	background-color: transparent;
-	color: inherit;
+	background-color: transparent; /* Makes highlight background transparent */
+	color: inherit; /* Inherits text color for highlighted text */
 }
 
+/* Input styling */
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+	border: 0; /* Removes default inner border on focus */
+	padding: 0; /* Removes default padding on focus */
 }
 
+/* Remove default browser styling from form elements */
 input, select, textarea {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	-ms-appearance: none;
-	appearance: none;
+	-moz-appearance: none; /* Removes default styling in Firefox */
+	-webkit-appearance: none; /* Removes default styling in Chrome and Safari */
+	-ms-appearance: none; /* Removes default styling in Internet Explorer */
+	appearance: none; /* Removes default styling in modern browsers */
 }
 
-/* Basic */
+/* Basic styling */
+html {
+	box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
 
-	html {
-		box-sizing: border-box;
-	}
+*, *:before, *:after {
+	box-sizing: inherit; /* Inherits box-sizing from parent elements */
+}
 
-	*, *:before, *:after {
-		box-sizing: inherit;
-	}
+body {
+	background: #9b97a6; /* Sets a default background color */
+}
 
-	body {
-		background: #9b97a6;
-	}
-
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-			-moz-animation: none !important;
-			-webkit-animation: none !important;
-			-ms-animation: none !important;
-			animation: none !important;
-			-moz-transition: none !important;
-			-webkit-transition: none !important;
-			-ms-transition: none !important;
-			transition: none !important;
-		}
+/* Prevent animations and transitions during preload */
+body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+	-moz-animation: none !important; /* Disables animations in Firefox */
+	-webkit-animation: none !important; /* Disables animations in Chrome and Safari */
+	-ms-animation: none !important; /* Disables animations in Internet Explorer */
+	animation: none !important; /* Disables animations in modern browsers */
+	-moz-transition: none !important; /* Disables transitions in Firefox */
+	-webkit-transition: none !important; /* Disables transitions in Chrome and Safari */
+	-ms-transition: none !important; /* Disables transitions in Internet Explorer */
+	transition: none !important; /* Disables transitions in modern browsers */
+}
 
 	body, input, textarea, select {
 		font-family: "Ubuntu", Helvetica, sans-serif;
