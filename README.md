@@ -20,7 +20,7 @@ By meticulously planning and communicating, we avoided merge conflicts and ensur
 
 Sarah Markland - [LinkedIn](www.linkedin.com/in/sarahmarkland-webdev)
 
-Tayler Coon
+Tayler Coon - [LinkedIn](https://www.linkedin.com/in/taylercoon)
 
 Aaron Bell 
 
