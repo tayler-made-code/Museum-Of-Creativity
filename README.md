@@ -20,7 +20,7 @@ By meticulously planning and communicating, we avoided merge conflicts and ensur
 
 Sarah Markland - [LinkedIn](www.linkedin.com/in/sarahmarkland-webdev)
 
-Tayler Coon - [LinkedIn](https://www.linkedin.com/in/taylercoon)
+Tayler Coon - Hey there, I'm Tayler Coon, a Full-Stack Engineer with a passion for turning ideas into reality through code! When I'm not coding, you'll likely find me tinkering under my Datsun or mastering the art of Disc Golf. Let's connect on [LinkedIn](https://www.linkedin.com/in/taylercoon/)! Feel free to explore more of my projects on [Github](https://github.com/tayler-made-code)
 
 Aaron Bell 
 
